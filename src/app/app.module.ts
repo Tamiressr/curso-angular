@@ -11,6 +11,7 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { CourseListComponent } from './courses/course-list.component';
 import { StarComponent } from './star/star.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path:'courses',component: CourseListComponent

@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Course } from "./course";
 import { CourseService } from "./course.service";
 @Component({
- 
+
   templateUrl:'./course-list.component.html'
 
 }
@@ -20,10 +20,22 @@ export class CourseListComponent implements OnInit{
    }
 
  ngOnInit():void{
+this.retrieveAll();
+}
 
-this._courses=this.courseService.retrieveAll();
-this.filteredCourses=this._courses;
- }
+retrieveAll():void{
+  this.courseService.retrieveAll().subscribe({
+    next: courses=>{
+      this._courses=courses;
+      this.filteredCourses=this._courses;
+    },
+    error: err=>{
+      console.log('Error',err);
+    }
+  });
+}
+
+
 //filtra o curso no momento em que é digitado o valor no input
  set filter(value:string){
   this._filterBy=value;
