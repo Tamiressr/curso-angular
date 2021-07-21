@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'course-manager';
+  //tipar a variável boa prática
+  name:string= 'Tamires';
+
 }
