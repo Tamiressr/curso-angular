@@ -36,5 +36,6 @@ export class CourseInfoComponent implements OnInit{
       }
     });
   }
+ 
 
 }

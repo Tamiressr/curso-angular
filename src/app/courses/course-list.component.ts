@@ -34,7 +34,17 @@ retrieveAll():void{
     }
   });
 }
-
+deleteById(courseId:number):void{
+  this.courseService.deleteById(courseId).subscribe({
+    next: ()=>{
+      console.log('Deleted with sucess');
+      this.retrieveAll();
+    },
+    error:err=>{
+      console.log('Error',err);
+    }
+  });
+}
 
 //filtra o curso no momento em que é digitado o valor no input
  set filter(value:string){
